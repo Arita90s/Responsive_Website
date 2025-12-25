@@ -1,0 +1,71 @@
+@use '../2-tools/mixin' as *;
+
+// 12カラムのグリッドシステム
+.l-columns {
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: calc(var(--col-gap) * 1%);
+
+    // 配置
+    &--start {
+        justify-content: start;
+    }
+    &--center {
+        justify-content: center;
+    }
+    &--end {
+        justify-content: end;
+    }
+    &--between {
+        justify-content: space-between;
+    }
+    &--even {
+        justify-content: space-evenly;
+    }
+    &--around {
+        justify-content: space-around;
+    }
+    
+    // 確認用
+    @at-root [class*="l-columns__col"] {
+        outline: 1px solid orange;
+        background-color: rgba(orange, .2);
+    }
+
+    // フレックスアイテムの基本幅
+    & > * {
+        width: 100%;
+    }
+
+    // .l-columns__col## が出来上がる
+    @for $i from 1 through 12 {
+        @if $i == 1 {
+            &__col#{$i} {
+                width: calc(var(--col-width) * #{$i} *1%);
+            }
+        } 
+        @else {
+            &__col#{$i} {
+                width: calc(var(--col-width) * #{$i} * 1% + var(--col-gap) * #{$i -1} * 1%);
+            }
+        }
+    }
+
+PCバージョン
+@include mq {
+    // &--pc {
+    //     display: flex;
+    //     flex-wrap: wrap;
+    //     column-gap: calc(var(--col-gap) * 1%)
+    // }
+     @for $i from 1 through 12 {
+        @if $i == 1 {
+            &__col#{$i}--pc {
+                width: calc(var(--col-width) * #{$i} *1%);
+            }
+        } @else {
+            &__col#{$i}--pc {
+                width: calc(var(--col-width) * #{$i} * 1% + var(--col-gap) * #{$i -1} * 1%);
+            }
+        }
+}

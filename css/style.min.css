@@ -1,0 +1,172 @@
+:root {
+  --base-color: #FDF7F3;
+  --main-color: #73A776;
+  --sub-color1: #F0F5F0;
+  --sub-color2: #DAE2DB;
+  --white: #FFFFFF;
+  --gray1: #9A9A9A;
+  --gray2: #4C524C;
+  --text-color: #333333;
+  --font-family-ja: "Noto Sans JP","Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+  --fony-family-en: Arial, sans-serif;
+  --col-width: 5.4;
+  --col-gap: 3.2;
+}
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.5;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.1;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  -webkit-text-decoration-skip: ink;
+          text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input, button,
+textarea, select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* Make sure textareas without a rows attribute are not tiny */
+textarea:not([rows]) {
+  min-height: 10em;
+}
+
+/* Anything that has been anchored to should have extra scroll margin */
+:target {
+  scroll-margin-block: 5ex;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 62.5%;
+}
+
+body {
+  font-family: var(--font-family-ja);
+  font-size: 1.4rem;
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--text-color);
+}
+
+a {
+  color: var(--main-color);
+  text-decoration: none;
+}
+
+.l-columns {
+  display: flex;
+  flex-wrap: wrap;
+  -moz-column-gap: calc(var(--col-gap) * 1%);
+       column-gap: calc(var(--col-gap) * 1%);
+}
+.l-columns--start {
+  justify-content: start;
+}
+.l-columns--center {
+  justify-content: center;
+}
+.l-columns--end {
+  justify-content: end;
+}
+.l-columns--between {
+  justify-content: space-between;
+}
+.l-columns--even {
+  justify-content: space-evenly;
+}
+.l-columns--around {
+  justify-content: space-around;
+}
+.l-columns [class*=l-columns__col] {
+  outline: 1px solid orange;
+  background-color: rgba(255, 165, 0, 0.2);
+}
+.l-columns__col1 {
+  width: calc(var(--col-width) * 1 * 1%);
+}
+.l-columns__col2 {
+  width: calc(var(--col-width) * 2 * 1% + var(--col-gap) * 2 -1 * 1%);
+}
+.l-columns__col3 {
+  width: calc(var(--col-width) * 3 * 1% + var(--col-gap) * 3 -1 * 1%);
+}
+.l-columns__col4 {
+  width: calc(var(--col-width) * 4 * 1% + var(--col-gap) * 4 -1 * 1%);
+}
+.l-columns__col5 {
+  width: calc(var(--col-width) * 5 * 1% + var(--col-gap) * 5 -1 * 1%);
+}
+.l-columns__col6 {
+  width: calc(var(--col-width) * 6 * 1% + var(--col-gap) * 6 -1 * 1%);
+}
+.l-columns__col7 {
+  width: calc(var(--col-width) * 7 * 1% + var(--col-gap) * 7 -1 * 1%);
+}
+.l-columns__col8 {
+  width: calc(var(--col-width) * 8 * 1% + var(--col-gap) * 8 -1 * 1%);
+}
+.l-columns__col9 {
+  width: calc(var(--col-width) * 9 * 1% + var(--col-gap) * 9 -1 * 1%);
+}
+.l-columns__col10 {
+  width: calc(var(--col-width) * 10 * 1% + var(--col-gap) * 10 -1 * 1%);
+}
+.l-columns__col11 {
+  width: calc(var(--col-width) * 11 * 1% + var(--col-gap) * 11 -1 * 1%);
+}
+.l-columns__col12 {
+  width: calc(var(--col-width) * 12 * 1% + var(--col-gap) * 12 -1 * 1%);
+}/*# sourceMappingURL=style.min.css.map */

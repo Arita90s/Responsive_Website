@@ -1,0 +1,20 @@
+// ベーススタイル
+// 基本的な要素に対するスタイル
+// HTML,body,a
+
+html {
+    scroll-behavior: smooth; //ページ内リンクする際にアニメーションが適用される
+    font-size: 62.5%; //ベースのフォントサイズが10pxとして扱われる
+}
+body {
+    font-family: var(--font-family-ja);
+    font-size: 1.4rem; //14px
+    font-weight: 400; //normal
+    line-height: 1.7;
+    color: var(--text-color);
+}
+
+a {
+    color: var(--main-color);
+    text-decoration: none;
+}

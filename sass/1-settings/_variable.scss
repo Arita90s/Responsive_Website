@@ -1,0 +1,23 @@
+// 変数ファイル
+:root {
+    // 変数の指定の仕方
+    // --変数名: orange;
+
+    // カラー
+    --base-color: #FDF7F3;
+    --main-color: #73A776;
+    --sub-color1: #F0F5F0;
+    --sub-color2: #DAE2DB;
+    --white: #FFFFFF;
+    --gray1: #9A9A9A;
+    --gray2: #4C524C;
+    --text-color: #333333;
+
+    // フォント
+    --font-family-ja: 'Noto Sans JP',"Hiragino Kaku Gothic ProN", "Hiragino Sans", "Meiryo", sans-serif;
+    --fony-family-en: Arial, sans-serif;
+
+    // グリッドシステム用カラムサイズ
+    --col-width: 5.4;
+    --col-gap: 3.2;
+}
