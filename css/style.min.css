@@ -409,6 +409,24 @@ img {
   }
 }
 
+.l-footer {
+  background: var(--gray2);
+  padding-top: 14px;
+  padding-bottom: 10px;
+}
+.l-footer__logo {
+  width: 230px;
+  margin-inline: auto;
+  margin-bottom: 20px;
+}
+.l-footer__copyright {
+  display: block;
+  text-align: center;
+  color: var(--white);
+  font-family: var(--font-family-en);
+  font-size: 1.2rem;
+}
+
 .c-btn {
   display: inline-block;
   width: 200px;
@@ -699,6 +717,7 @@ img {
   .c-footerNav__listItem a {
     color: var(--white);
     font-size: 1.4rem;
+    padding-block: 0;
   }
   .c-footerNav__outerLink::after {
     background-color: var(--white);
