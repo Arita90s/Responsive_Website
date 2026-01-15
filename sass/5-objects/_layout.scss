@@ -1,1 +1,238 @@
+@use '../2-tools/mixin' as *;
 // ヘッダー、フッター、ナビゲーションのレイアウト
+
+// コンテナ
+.l-container {
+    padding-inline: 24px; // padding-left, padding-right
+    margin-inline: auto; // margin-left, margin-right
+    // 1160 + 24 + 24 = 1208
+    max-width: 1208px;
+}
+
+//ヘッダー
+.l-header {
+    background-color: var(--white);
+    height: 70px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-inline: 24px 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    // ロゴ
+    &__logo {
+        width: 140px;
+        margin: 0;
+        flex-shrink: 0;
+    }
+
+    // ボタン
+    &__navBtn {
+        width: 44px;
+        height: 44px;
+        border: none;
+        // background: none;
+        background: yellow;
+        flex-shrink: 0;
+        position: relative;
+    }
+
+    &__navBtn span,
+    &__navBtn::before,
+    &__navBtn::after {
+        content: '';
+        width: 24px;
+        height: 2px;
+        background-color: var(--main-color);
+        display: flex;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        translate: -50% -50%;
+    }
+
+    &__navBtn::before {
+        top: calc(50% - 9px);
+    }
+
+    &__navBtn::after {
+        top: calc(50% + 9px);
+    }
+
+    // ナビゲーション
+    &__nav {
+        position: fixed;
+        inset: 0; //top, bottom, right, left: 0
+        background-color: var(--main-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        // place-items: center; //justify-items, align-items: center
+    }
+
+    &__navClose {
+        position: absolute;
+        right: 16px;
+        top: 16px;
+        width: 44px;
+        height: 44px;
+        border: none;
+        background: none;
+    }
+
+    &__navClose::before,
+    &__navClose::after {
+        content: '';
+        width: 20px;
+        height: 2px;
+        background-color: var(--white);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        translate: -50% -50%;
+    }
+
+    &__navClose::before {
+        rotate: 45deg;
+    }
+
+    &__navClose::after {
+        rotate: -45deg;
+    }
+
+    &__navLogo {
+        width: 110px;
+        margin-bottom: 16px;
+    }
+
+    &__navList {
+        list-style: none;
+        margin: 0;
+        margin-bottom: 40px;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    &__navList a {
+        display: block;
+        padding-block: 12px;
+        color: var(--white);
+    }
+
+    &__navItemEn,
+    &__navItemJa {
+        display: block;
+    }
+
+    &__navItemEn {
+        font-family: var(--font-family-en);
+        font-size: 1.6rem;
+        letter-spacing: .1em;
+        text-transform: uppercase;
+    }
+
+    &__navItemJa {
+        font-size: 1.2rem;
+    }
+
+    &__onlineShopPc {
+        display: none;
+    }
+
+    // PC
+    @include mq {
+        padding-inline: 16px 0;
+
+        // ボタン
+        &__navBtn {
+            display: none;
+        }
+
+        // ナビゲーション
+        &__nav {
+            position: static;
+            // position: initial; ブラウザの初期値に戻す
+            background-color: transparent;
+            flex-direction: row;
+            flex-grow: 1;
+            justify-content: end;
+            height: 100%;
+        }
+
+        &__navClose {
+            display: none;
+        }
+
+        &__navLogo {
+            display: none;
+        }
+
+        &__navList {
+            flex-direction: row;
+            margin-bottom: 0;
+            width: 100%;
+            justify-content: end;
+            height: 100%;
+        }
+
+        &__navItem {
+            flex: 0 1 140px;
+            //flex-grow: 0, flex-shrink: 1,flex-basis: 140px
+        }
+
+        &__navList a {
+            color: var(--text-color);
+            padding-block: 0;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+        }
+
+        &__navItemJa {
+            color: var(--main-color);
+        }
+
+        &__onlineShop {
+            height: 100%;
+        }
+
+        &__onlineShopPc {
+            display: flex;
+            align-items: center;
+            column-gap: 8px;
+            height: 100%;
+            padding-inline: 24px;
+
+            background-color: var(--main-color);
+            color: var(--white);
+            white-space: nowrap;
+
+            &::before {
+                content: "";
+                display: block;
+                width: 24px;
+                height: 24px;
+                background-color: var(--white);
+                mask-image: url(../img/common/icon-shopping-cart.svg);
+                mask-size: contain;
+                mask-repeat: no-repeat;
+                mask-position: center center;
+            }
+        }
+
+        &__onlineShopSp {
+            display: none;
+        }
+    }
+}
+
+//フッター
+.

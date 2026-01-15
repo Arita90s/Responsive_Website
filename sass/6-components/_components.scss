@@ -1,0 +1,359 @@
+// コンポーネントスタイル
+@use '../2-tools/mixin' as *;
+
+// ボタン
+// ========================================
+.c-btn {
+    display: inline-block;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    font-family: var(--font-family-en);
+    color: var(--text-color);
+    letter-spacing: .1em;
+    background-color: var(--white);
+    border: 1px solid var(--gray2);
+    position: relative;
+    isolation: isolate;
+
+    &::after{
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: var(--main-color);
+        left: 0;
+        top: 0;
+        opacity: 0;
+        transform: scaleY(0);
+        transform-origin: center top;
+        z-index: -1;
+        transition: .3s;
+    }
+
+    &:hover {
+        color: var(--white);
+        border-color: var(--main-color);
+    }
+
+    &:hover::after {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+
+    // スタイル
+    &--white {
+        border: 1px solid var(--white);
+        background-color: rgba(255 255 255/.2);
+        color: var(--white);
+
+        &::after {
+            content: none;
+        }
+
+        &:hover {
+            border-color: var(--white);
+        }
+    }
+
+    &--accent {
+        background-color: var(--main-color);
+        border-color: var(--main-color);
+        color: var(--white);
+    }
+
+    // アイコン
+    &--icon {
+        &::before {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--text-color);
+            margin-right: 8px;
+            mask-position: center center;
+            mask-repeat: no-repeat;
+            mask-size: contain;
+            vertical-align: middle;
+        }
+    }
+
+    &--cart {
+        &::before {
+            mask-image: url(../img/common/icon-shopping-cart.svg);
+        }
+    }
+    &--outerlink {
+        &::before {
+            mask-image: url(../img/common/icon-outerlink.svg);
+        }
+    }
+    &--phone {
+        &::before {
+            mask-image: url(../img/common/icon-phone.svg);
+        }
+    }
+
+    &--icon:hover::before {
+        background-color: var(--white);
+    }
+
+    // ✖ &--icon&--white
+    &--icon#{&}--white::before {
+        //.c-btn--icon.c-btn--white::before
+        background-color: var(--white);
+    }
+
+    &--icon#{&}--accent::before {
+    background-color: var(--white);
+    }
+}
+
+// 見出し
+// ========================================
+//セクション見出し
+.c-sectionTitle {
+    text-align: center;
+    display: table;
+    margin-inline: auto;
+    min-width: 327px;
+
+    &__ja {
+        font-size: 2.4rem;
+        font-weight: 500;
+        color: var(--main-color);
+        letter-spacing: .1em;
+        margin-bottom: 5px;
+        display: block;
+    }
+
+    &__en {
+        font-family: var(--font-family-en);
+        font-size: 1.4rem;
+        letter-spacing: .1em;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-weight: 400;
+        
+        &::before,
+        &::after {
+            content: '';
+            width: 100px;
+            height: 1px;
+            background-color: var(--gray2);
+        }
+    }
+
+    //スタイル
+    &--white &__ja {
+        color: var(--white);
+    }
+    &--white &__en {
+        color: var(--white);
+
+        &::before,
+        &::after {
+            background-color: var(--white);
+        }
+    }
+}
+
+//中見出し
+.c-heading {
+    font-size: 2.2rem;
+    font-weight: 500;
+    color: var(--text-color);
+    text-align: center;
+    position: relative;
+    padding-bottom: 10px;
+
+    &::after {
+        content: '';
+        width: 100px;
+        height: 2px;
+        display: block;
+        background-color: var(--text-color);
+        position: absolute;
+        left: 50%;
+        bottom: 0;
+        translate: -50% 0;
+    }
+    
+    // デスクトップスタイル
+    @include mq {
+        text-align: start;
+
+        &::after {
+            left: 0;
+            translate: 0;
+        }
+    }
+}
+
+// 小見出し
+.c-headingSub {
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding-block: 12px;
+    border-top: 1px solid var(--sub-color2);
+    border-top: 3px solid var(--sub-color2);
+}
+
+// オンラインショップ
+// ========================================
+.c-onlineShop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    height: 280px;
+    background: url(../img/common/online-shop.webp) no-repeat center center / cover;
+    position: relative;
+    isolation: isolate;
+
+    &::before {
+        content: '';
+        background-color: rgba(115, 167, 118, .32);
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -1;
+        backdrop-filter: blur(8px);
+    }
+}
+
+// ページタイトル
+// ========================================
+.c-pageTitle {
+    &__heading {
+        background-color: var(--sub-color1);
+        height: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__headingText {
+        background: var(--white);
+        min-width: 200px;
+        height: 60px;
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding-inline: 10px;
+        font-family: var(--font-family-en);
+        font-size: 2rem;
+        font-weight: normal;
+        letter-spacing: .1em;
+        margin-top: 0;
+    }
+
+    &__img {
+        height: 120px;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    @include mq {
+        &__heading {
+            height: 180px;
+        }
+
+        &__headingText {
+            min-width: 340px;
+            height: 140px;
+            font-size: 3.4rem;
+        }
+
+        &__img {
+            height: 400px;
+        }
+    }
+}
+
+// フッターナビゲーション
+//========================================
+.c-footerNav {
+    background: var(--sub-color1);
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    &__listItem {
+        text-align: center;
+        border-bottom: 1px solid var(--sub-color2);
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        a {
+            display: block;
+            padding-block: 10px;
+            font-size: 2rem;
+            font-family: var(--font-family-en);
+            text-transform: uppercase;
+            color: var(--main-color);
+            letter-spacing: .1em;
+        }
+    }
+
+    &__outerLink {
+        &::after {
+            content: '';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background-color: var(--main-color);
+            mask: url(../img/common/icon-outerlink.svg) no-repeat center center / contain;
+            vertical-align: middle;
+            margin-left: 10px;
+            margin-top: -5px;
+        }
+    }
+
+    @include mq {
+        background-color: var(--gray2);
+        padding-top: 16px;
+
+        &__list {
+            flex-direction: row;
+            justify-content: center;
+            column-gap: 24px;
+        }
+
+        &__listItem {
+            border-bottom: none;
+            
+            a {
+                color: var(--white);
+                font-size: 1.4rem;
+            }
+        }
+
+        &__outerLink {
+            &::after {
+                background-color: var(--white);
+                width: 14px;
+                height: 14px;
+                margin-left: 8px;
+            }
+        }
+    }
+}
