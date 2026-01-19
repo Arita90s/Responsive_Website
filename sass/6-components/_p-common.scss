@@ -1,0 +1,60 @@
+//共通プロジェクト
+@use '../2-tools/mixin' as *;
+
+//製品一覧
+.p-products {
+    padding-block: 64px;
+
+
+    .c-sectionTitle {
+        margin-bottom: 56px;
+    }
+
+
+    &__list {
+        row-gap: 24px;
+        margin-bottom: 32px;
+    }
+
+    &__listItem {
+        a {
+            display: flex;
+            gap: 24px;
+            align-items: center;
+        }
+    }
+
+    &__listItemImg,
+    &__listItemTitle {
+        width: 50%;
+    }
+
+    &__listItemTitle {
+        margin-bottom: 0;
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+    @include mq {
+        &__list {
+            row-gap: 0;
+        }
+
+        &__listItem {
+            a {
+                flex-direction: column;
+            }
+        }
+
+        &__listItemImg,
+        &__listItemTitle {
+            width: auto;
+        }
+
+        &__listItemTitle {
+            text-align: center;
+        }
+    }
+}

@@ -1,0 +1,118 @@
+//TOPページ
+@use '../2-tools/mixin' as *;
+
+//メインビジュアル
+.p-topMv {
+    height: 250px;
+
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    @include mq {
+        height: 730px;
+    }
+}
+
+//コンセプト
+.p-topConcept {
+    padding-block: 64px;
+
+    .c-sectionTitle {
+        margin-bottom: 56px;
+    }
+
+    &__text {
+        font-size: 1.5rem;
+        margin-bottom: 32px;
+
+        p {
+            line-height: 1.7;
+
+            &:not(:first-child) {
+                margin-top: 8px;
+            }
+        }
+
+        br {
+            display: none;
+        }
+    }
+
+    &__link {
+        text-align: center;
+    }
+
+    @include mq {
+        &__text {
+            text-align: center;
+
+            br {
+                display: block;
+            }
+        }
+    }
+}
+
+//About 
+.p-topAbout {
+    padding-block: 64px;
+    background-color: var(--sub-color1);
+
+    &__subSection--faq {
+        margin-bottom: 48px;
+    }
+
+    .c-sectionTitle {
+        margin-bottom: 56px;
+    }
+
+    .c-heading {
+        margin-bottom: 32px;
+    }
+
+    &__subSentionImg {
+        margin-bottom: 24px;
+    }
+
+    &__subSectionText {
+        margin-bottom: 24px;
+    }
+
+    &__subSectionLink {
+        text-align: center;
+    }
+
+    @include mq {
+        &__subSection {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto 1fr;
+            gap: 32px 40px;
+        }
+
+        &__subSectionImg {
+            grid-column: 1/2;
+            grid-row: 1/4;
+        }
+
+        .c-heading {
+            margin-block: 0;
+        }
+
+        &__subSectionText {
+            margin-block: 0;
+        }
+
+        &__subSectionLink {
+            text-align: start;
+        }
+
+        //オリジナルショップ
+        &__subSection--shop &__subSectionImg {
+            grid-column: 2 / 3;
+        }
+    }
+}

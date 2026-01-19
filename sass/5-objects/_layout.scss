@@ -21,6 +21,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    z-index: 1000;
 
     // ロゴ
     &__logo {
@@ -34,8 +35,7 @@
         width: 44px;
         height: 44px;
         border: none;
-        // background: none;
-        background: yellow;
+        background: none;
         flex-shrink: 0;
         position: relative;
     }
@@ -72,6 +72,15 @@
         align-items: center;
         flex-direction: column;
         // place-items: center; //justify-items, align-items: center
+        visibility: hidden;
+        opacity: 0;
+        transition: .3s;
+    }
+
+    // body.is-open .l-header__nav
+    @at-root body.is-open &__nav {
+        visibility: visible;
+        opacity: 1;
     }
 
     &__navClose {

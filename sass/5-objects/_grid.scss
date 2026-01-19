@@ -30,12 +30,7 @@
     &--around {
         justify-content: space-around;
     }
-
-    // 確認用
-    @at-root [class*="l-columns__col"] {
-        outline: 1px solid orange;
-        background-color: rgba(orange, .2);
-    }
+    
 
     // フレックスアイテムの基本幅
     & > * {

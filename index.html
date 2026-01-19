@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.min.css">
+    <script src="js/script.js" defer></script>
 </head>
 
 <body>
@@ -67,15 +68,144 @@
             </nav>
     </header>
 
-    <!-- グリッドシステムテスト -->
-    <div class="l-columns l-columns--between">
-        <div class="l-columns__col2">2</div>
-        <div class="l-columns__col8">8</div>
-    </div>
-    <div class="l-columns">
-        <div class="l-columns__col2--pc">2</div>
-        <div class="l-columns__col8--pc">8</div>
-    </div>
+    <main>
+        <!-- メインビジュアル -->
+        <div class="p-topMv">
+            <img src="img/top/mv.webp" alt="メインビジュアル">
+        </div>
+
+        <!-- コンセプト -->
+        <section class="p-topConcept">
+            <div class="l-container">
+                <h2 class="c-sectionTitle">
+                    <span class="c-sectionTitle__ja">コンセプト</span>
+                    <span class="c-sectionTitle__en">Concept</span>
+                </h2>
+
+                <div class="p-topConcept__text">
+                    <p>
+                        どなたにも安心してお使いいただくため、<br>
+                        数万種類以上から選び抜いたスキンケアに有効かつ安全な植物を、<br>
+                        自社農園で大事に育てています。
+                    </p>
+
+                    <p>
+                        植物の栄養をじっくりと熟成させ、<br>
+                        一滴一滴丁寧に抽出したエキスから生まれた
+                        オーガニックコスメ、<br>「AKARI organic」。
+                    </p>
+
+                    <p>
+                        あなたの肌を、<br>
+                        本来の美しく健康な状態へ導きます。
+                    </p>
+                </div>
+                <div class="p-topConcept__link">
+                    <a href="#" class="c-btn">Button</a>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- About -->
+        <section class="p-topAbout">
+            <div class="l-container">
+                <h2 class="c-sectionTitle">
+                    <span class="c-sectionTitle__ja">AKARI organicについて</span>
+                    <span class="c-sectionTitle__en">About</span>
+                </h2>
+                <section class="p-topAbout__subSection p-topAbout__subSection--faq">
+                    <h3 class="c-heading">よくあるご質問</h3>
+                    <img class="p-topAbout__subSectionImg" src="img/top/about-faq.webp" alt="">
+                    <p class="p-topAbout__subSectionText">
+                        オーガニックコスメはとってもデリケートな商品のため、正しい使い方をしないと効果が半減してしまいます。<br>
+                        保管方法で注意すること、使用期限、敏感肌でも安心して使える・・・？<br>
+                        製品に関するお客様からのご質問にお答えいたします。
+                    </p>
+                    <div class="p-topAbout__subSectionLink">
+                        <a href="#" class="c-btn">FAQ</a>
+                    </div>
+                </section>
+                <section class="p-topAbout__subSection p-topAbout__subSection--shop">
+                    <h3 class="c-heading">オリジナルショップ</h3>
+                    <img class="p-topAbout__subSectionImg" src="img/top/about-shop.webp" alt="">
+                    <p class="p-topAbout__subSectionText">
+                        AKARI organicオリジナルショップでは、製品をご購入いただける他、オリジナル化粧品を手作りできるアロマバーをご利用いただけます。<br>
+                        あなたの肌質やお肌の悩み、お好みの香りに合わせ、世界で一つだけのオリジナルブレンドオイルをおつくりいたします。
+                    </p>
+                    <div class="p-topAbout__subSectionLink">
+                        <a href="#" class="c-btn">Shop</a>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <section class="p-products">
+            <div class="l-container">
+                <h2 class="c-sectionTitle">
+                    <span class="c-sectionTitle__ja">製品一覧</span>
+                    <span class="c-sectionTitle__en">Products</span>
+                </h2>
+
+                <div class="l-columns p-products__list">
+                    <div class="l-columns__col4--pc">
+                        <div class="p-products__listItem">
+                            <a href="detail.html">
+                                <img class="p-products__listItemImg" src="img/products-detail/product-list-lotion.webp" alt="">
+                                <p class="p-products__listItemTitle">
+                                    敏感肌用化粧水
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="l-columns__col4--pc">
+                        <div class="p-products__listItem">
+                            <a href="detail.html">
+                                <img class="p-products__listItemImg" src="img/products-detail/product-list-milk.webp" alt="">
+                                <p class="p-products__listItemTitle">
+                                    敏感肌用乳液
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="l-columns__col4--pc">
+                        <div class="p-products__listItem">
+                            <a href="detail.html">
+                                <img class="p-products__listItemImg" src="img/products-detail/product-list-soap.webp" alt="">
+                                <p class="p-products__listItemTitle">
+                                    ハンドメイドソープ
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="p-products__link">
+                    <a href="products.html" class="c-btn">Products</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="c-footerNav">
+        <ul class="c-footerNav__list">
+            <li class="c-footerNav__listItem"><a href="#">Home</a></li>
+            <li class="c-footerNav__listItem"><a href="#">Concept</a></li>
+            <li class="c-footerNav__listItem"><a href="#">Products</a></li>
+            <li class="c-footerNav__listItem"><a href="#">Faq</a></li>
+            <li class="c-footerNav__listItem"><a href="#">Shop</a></li>
+            <li class="c-footerNav__listItem"><a href="#" target="_blank" class="c-footerNav__outerLink">Online Shop</a>
+            </li>
+        </ul>
+    </nav>
+
+    <footer class="l-footer">
+        <div class="l-footer__logo">
+            <img src="img/common/logo-white.webp" alt="AKARI Organic">
+        </div>
+        <small class="l-footer__copyright">
+            Copyright &copy; AKARI Organic All Rights Reserved.
+        </small>
+    </footer>
 </body>
 
 </html>
