@@ -352,6 +352,8 @@ body.is-open .l-header__nav {
     flex-grow: 1;
     justify-content: end;
     height: 100%;
+    visibility: visible;
+    opacity: 1;
   }
   .l-header__navClose {
     display: none;
@@ -595,7 +597,7 @@ body.is-open .l-header__nav {
   font-weight: 500;
   padding-block: 12px;
   border-top: 1px solid var(--sub-color2);
-  border-top: 3px solid var(--sub-color2);
+  border-bottom: 3px solid var(--sub-color2);
 }
 
 .c-onlineShop {
@@ -845,7 +847,7 @@ body.is-open .l-header__nav {
   width: 50%;
 }
 .p-products__listItemTitle {
-  margin-bottom: 0;
+  margin-top: 0;
 }
 .p-products__link {
   text-align: center;
