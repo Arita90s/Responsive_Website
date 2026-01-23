@@ -915,6 +915,12 @@ body.is-open .l-header__nav {
   margin: 0;
   padding-bottom: 25px;
 }
+@media screen and (min-width: 768px) {
+  .p-promise__list {
+    padding-bottom: 0;
+    margin-bottom: -40px;
+  }
+}
 .p-promise__listItem {
   background-color: var(--white);
   border: 1px solid var(--main-color);
@@ -922,8 +928,10 @@ body.is-open .l-header__nav {
   position: relative;
   top: 25px;
 }
-.p-promise__listItem:not(:last-child) {
-  margin-bottom: 57px;
+@media screen and (min-width: 768px) {
+  .p-promise__listItem {
+    margin-bottom: 65px;
+  }
 }
 .p-promise__listNumber {
   height: 50px;
