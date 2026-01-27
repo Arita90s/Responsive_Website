@@ -59,8 +59,7 @@
         padding-bottom: 25px;
 
         @include mq {
-            padding-bottom: 0;
-            margin-bottom: -40px;
+            margin-bottom: -65px;
         }
     }
 
@@ -70,13 +69,16 @@
         border-radius: 8px;
         position: relative;
         top: 25px;
-
+        
         &:not(:last-child) {
-            // margin-bottom: 57px; // margin 32px + Number 25px
+            margin-bottom: 57px; // margin 32px + Number 25px
         }
-
+        
         @include mq {
-            margin-bottom: 65px;
+            margin-bottom: 65px;  // margin 40px + Number 25px
+            &:not(:last-child) {
+                margin-bottom: 65px;
+            }
         }
     }
 
