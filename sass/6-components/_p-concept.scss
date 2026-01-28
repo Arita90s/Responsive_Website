@@ -57,6 +57,7 @@
     &__list {
         margin: 0;
         padding-bottom: 25px;
+        
 
         @include mq {
             margin-bottom: -65px;
@@ -69,33 +70,35 @@
         border-radius: 8px;
         position: relative;
         top: 25px;
-        
+        counter-increment: number;
+
         &:not(:last-child) {
             margin-bottom: 57px; // margin 32px + Number 25px
         }
-        
+
         @include mq {
-            margin-bottom: 65px;  // margin 40px + Number 25px
+            margin-bottom: 65px; // margin 40px + Number 25px
+
             &:not(:last-child) {
                 margin-bottom: 65px;
             }
         }
     }
 
-    &__listNumber {
-        height: 50px;
-        width: 50px;
-        position: absolute;
-        top: -25px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-family: var(--fony-family-en);
-        font-size: 3rem;
-        text-align: center;
-        color: var(--white);
-        background-color: var(--main-color);
-        border-radius: 50%;
-    }
+    // &__listNumber {
+    //     height: 50px;
+    //     width: 50px;
+    //     position: absolute;
+    //     top: -25px;
+    //     left: 50%;
+    //     transform: translateX(-50%);
+    //     font-family: var(--fony-family-en);
+    //     font-size: 3rem;
+    //     text-align: center;
+    //     color: var(--white);
+    //     background-color: var(--main-color);
+    //     border-radius: 50%;
+    // }
 
     &__listTitle {
         margin: 0;
@@ -103,6 +106,21 @@
         font-size: 1.5rem;
         color: var(--main-color);
         text-align: center;
+
+        &::before {
+            content: counter(number);
+            height: 50px;
+            width: 50px;
+            position: absolute;
+            top: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 3rem;
+            text-align: center;
+            color: var(--white);
+            background-color: var(--main-color);
+            border-radius: 50%;
+        }
     }
 
     &__listText {
