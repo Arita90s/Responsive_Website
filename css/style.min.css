@@ -223,12 +223,6 @@ p {
   margin-inline: auto;
   max-width: 1208px;
 }
-@media screen and (min-width: 768px) {
-  .l-container {
-    padding-inline: 60px;
-    margin-inline: 80px;
-  }
-}
 
 .l-header {
   background-color: var(--white);
@@ -975,9 +969,6 @@ body.is-open .l-header__nav {
 .p-productItem {
   padding-block: 64px;
 }
-.p-productItem .l-container {
-  padding-inline: 0;
-}
 .p-productItem .c-sectionTitle {
   margin-bottom: 56px;
 }
@@ -986,40 +977,56 @@ body.is-open .l-header__nav {
   margin: 0;
   padding-inline-start: 0;
 }
+.p-productItem__listItem {
+  position: relative;
+}
 .p-productItem__listItem:not(:last-child) {
   margin-bottom: 40px;
 }
-@media screen and (min-width: 768px) {
-  .p-productItem__listItem {
-    flex-direction: row;
-  }
+.p-productItem__listItem--alter {
+  flex-direction: row-reverse;
+}
+.p-productItem__listItem--alter .p-productItem__listdescription {
+  left: 0;
+  right: auto;
 }
 .p-productItem__listImg {
-  width: 100%;
-  height: 100%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  width: calc(100% + 48px);
+  margin-left: -24px;
+  margin-right: -24px;
 }
 @media screen and (min-width: 768px) {
   .p-productItem__listImg {
-    margin-left: -140px;
+    width: calc(var(--col-width) * 8 * 1% + var(--col-gap) * 7 * 1% + 24px);
   }
 }
 .p-productItem__listdescription {
-  position: relative;
   margin-top: -24px;
   padding: 24px;
-  margin-inline: 24px;
   background-color: rgba(255, 255, 255, 0.7);
   z-index: 1;
 }
 @media screen and (min-width: 768px) {
   .p-productItem__listdescription {
     position: absolute;
+    margin: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: calc(var(--col-width) * 5 * 1% + var(--col-gap) * 4 * 1%);
+    right: 0;
+    margin-inline: calc(var(--col-width) * 1% + var(--col-gap) * 1%);
   }
 }
 .p-productItem__listTitle {
   border-bottom: solid 2px var(--text-color);
+}
+@media screen and (min-width: 768px) {
+  .p-productItem__listTitle {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 18px;
+  }
 }
 .p-productItem__listTitleJa {
   font-size: 2.2rem;
@@ -1033,6 +1040,11 @@ body.is-open .l-header__nav {
   text-align: center;
   padding-bottom: 16px;
   letter-spacing: 0.1rem;
+}
+@media screen and (min-width: 768px) {
+  .p-productItem__listTitleJa, .p-productItem__listTitleEn {
+    padding-bottom: 0;
+  }
 }
 .p-productItem__listText {
   margin-inline-start: 0;
