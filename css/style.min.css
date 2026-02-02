@@ -1207,4 +1207,84 @@ body.is-open .l-header__nav {
   .p-faq__listA.is-open {
     height: 0;
   }
+}
+
+.p-shop {
+  padding-block: 64px;
+}
+.p-shop .c-sectionTitle {
+  padding-bottom: 56px;
+}
+.p-shop__infomation {
+  display: flex;
+  flex-direction: column;
+  row-gap: 40px;
+  padding-bottom: 40px;
+}
+.p-shop__description {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.p-shop__descriptionText {
+  font-size: 1.5rem;
+}
+.p-shop__descriptionContact {
+  text-align: center;
+}
+.p-shop__descriptionContact .c-btn {
+  border: none;
+  border-radius: 8px;
+  background-color: var(--sub-color1);
+  overflow: hidden;
+}
+.p-shop__descriptionContact .c-btn--icon::before {
+  background-color: var(--main-color);
+}
+.p-shop__descriptionContact .c-btn--icon:hover::before {
+  background-color: var(--white);
+}
+.p-shop__infomationDetailList {
+  display: flex;
+  flex-direction: column;
+  row-gap: 16px;
+  margin: 0;
+}
+.p-shop__infomationDetailListItem {
+  display: flex;
+  flex-direction: column;
+  row-gap: 8px;
+  padding-bottom: 8px;
+  border-bottom: 1px dashed var(--gray1);
+}
+.p-shop__infomationDetailListItem dt {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+.p-shop__infomationDetailListItem dd {
+  margin: 0;
+  font-size: 1.5rem;
+}
+.p-shop__infomationMAP {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+}
+.p-shop__infomationMapLink {
+  text-align: center;
+}
+@media screen and (min-width: 768px) {
+  .p-shop__infomationList {
+    display: flex;
+    flex-direction: row-reverse;
+  }
+  .p-shop__infomation {
+    padding-bottom: 0;
+  }
+  .p-shop__descriptionContact {
+    text-align: start;
+  }
+  .p-shop__infomationMapLink {
+    text-align: end;
+  }
 }/*# sourceMappingURL=style.min.css.map */

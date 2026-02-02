@@ -1,0 +1,103 @@
+// 店舗情報ページ
+@use '../2-tools/mixin' as *;
+
+.p-shop {
+    padding-block: 64px;
+
+    .c-sectionTitle {
+        padding-bottom: 56px;
+    }
+
+    &__infomation {
+        display: flex;
+        flex-direction: column;
+        row-gap: 40px;
+        padding-bottom: 40px;
+    }
+
+    &__description {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    &__descriptionText {
+        font-size: 1.5rem;
+    }
+
+    &__descriptionContact {
+        text-align: center;
+
+        .c-btn {
+            border: none;
+            border-radius: 8px;
+            background-color: var(--sub-color1);
+            overflow: hidden;
+        }
+    
+        .c-btn--icon {
+            &::before {
+                background-color: var(--main-color);
+            }
+    
+            &:hover::before {
+                background-color: var(--white);
+            }
+        }
+    }
+
+
+    &__infomationDetailList {
+        display: flex;
+        flex-direction: column;
+        row-gap: 16px;
+        margin: 0;
+    }
+
+    &__infomationDetailListItem {
+        display: flex;
+        flex-direction: column;
+        row-gap: 8px;
+        padding-bottom: 8px;
+        border-bottom: 1px dashed var(--gray1);
+
+        dt {
+            font-size: 1.5rem;
+            font-weight: 500;
+        }
+
+        dd {
+            margin: 0;;
+            font-size: 1.5rem;
+        }
+    }
+
+    &__infomationMAP {
+        display: flex;
+        flex-direction: column;
+        row-gap: 24px;
+    }
+
+    &__infomationMapLink {
+        text-align: center;
+    }
+
+    @include mq {
+        &__infomationList {
+        display: flex;
+        flex-direction: row-reverse;
+        }
+
+        &__infomation {
+            padding-bottom: 0;
+        }
+
+        &__descriptionContact {
+            text-align: start;
+        }
+
+        &__infomationMapLink {
+            text-align: end;
+        }
+    }
+}
